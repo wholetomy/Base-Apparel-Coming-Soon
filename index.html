@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="script" href="script.js">
+  <title>Base Apparel coming soon page</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box pad header baseapparel">
+      <img src="images/logo.svg" alt="Base Apparel Logo">
+    </div>
+    <div class="box pad main">
+      <h1 class="title1">WE'RE</h1>
+      <h1 class="title2">COMING</h1>
+      <h1 class="title2">SOON</h1>
+      <p>
+      Hello fellow shoppers! We're currently building our new fashion store. 
+      Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <div class="inputcont">
+        <form id="form" action="#">
+          <input class="input" type="text" placeholder="E-mail Address" id="email">
+          <div id="errorimage"></div>
+          <button onclick="validation()" class="button" id="button"><img class="arrow" src="images/icon-arrow.svg" alt="Button Arrow"></button>
+        </form>
+      </div>
+      <div id="errortext"></div>
+    </div>
+    <div class="box aside">
+    </div>
+  </div>
+
+
+
+  <script>
+
+    function validation()
+    {
+      var form = document.getElementById("form");
+      var email = document.getElementById("email").value;
+      var ema = document.getElementById("email");
+      var errorimage = document.getElementById("errorimage");
+      var sla2 = document.getElementById("errortext");
+      
+
+      var pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (email.match(pattern))
+      {
+        console.log("Email Valido");
+        ema.classList.remove("sla");
+        errorimage.innerHTML = ''
+        sla2.classList.remove("errortext")
+        sla2.innerHTML = ""
+
+      }
+      else
+      {
+        console.log("Email não válido");
+        errorimage.innerHTML = `<img class="iconerror" src="images/icon-error.svg" alt="icon error">`
+        ema.classList.add("sla");
+        sla2.innerHTML = "Please provide a valid email"
+        sla2.classList.add("errortext")
+      }
+      if (email == "")
+      {
+        console.log("Email em branco");
+      }
+
+    }
+
+  </script>
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<!--   <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+
+</body>
+</html>
